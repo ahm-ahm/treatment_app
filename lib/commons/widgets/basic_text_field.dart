@@ -78,13 +78,13 @@ class BasicFormField extends StatelessWidget {
         fontSize: 16.sp,
       ),
       cursorColor: Colors.black,
-      cursorHeight: 20.h,
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
         hintText: hintText,
         hintStyle: TextStyle(
-          color: AppColors.grey,
-          fontSize: 16.sp,
+          color: AppColors.grey_989898,
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w400,
         ),
         errorStyle: TextStyle(
           fontSize: 12.sp,
@@ -106,7 +106,9 @@ class BasicFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(radius.r),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: AppColors.grey),
+          borderSide: BorderSide(
+            color: AppColors.black.withOpacity(0.1),
+          ),
           borderRadius: BorderRadius.circular(radius.r),
         ),
         focusedBorder: OutlineInputBorder(
@@ -114,6 +116,7 @@ class BasicFormField extends StatelessWidget {
           borderSide: const BorderSide(color: AppColors.grey),
         ),
         suffixIcon: suffixIcon,
+        contentPadding: contentPadding,
       ),
     );
   }

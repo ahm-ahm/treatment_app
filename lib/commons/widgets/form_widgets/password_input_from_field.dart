@@ -14,17 +14,24 @@ class PasswordInputFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         /// [Text]
         const AppText(text: 'Password'),
         SizedBox(height: 8.h),
 
         /// [Form field]
-        BasicFormField(
-          controller: controller,
-          hintText: 'At least 8 characters',
-          contentPadding:
-              EdgeInsets.symmetric(horizontal: 12.w, vertical: 17.h),
+        SizedBox(
+          child: BasicFormField(
+            controller: controller,
+            hintText: 'At least 8 characters',
+            contentPadding: EdgeInsets.only(
+              left: 12.w,
+              right: 12.w,
+              top: 17.h,
+              bottom: 18.h,
+            ),
+          ),
         )
       ],
     );

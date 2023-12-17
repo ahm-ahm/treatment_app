@@ -14,15 +14,24 @@ class EmailInputFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         /// [Text]
         const AppText(text: 'Email'),
         SizedBox(height: 8.h),
 
         /// [Form field]
-        BasicFormField(
-          controller: controller,
-          hintText: 'Enter email',
+        SizedBox(
+          child: BasicFormField(
+            controller: controller,
+            hintText: 'Enter email',
+            contentPadding: EdgeInsets.only(
+              left: 12.w,
+              right: 12.w,
+              top: 17.h,
+              bottom: 18.h,
+            ),
+          ),
         )
       ],
     );
