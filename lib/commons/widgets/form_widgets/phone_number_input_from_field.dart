@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:treatment_app/commons/widgets/app_text.dart';
 import 'package:treatment_app/commons/widgets/basic_text_field.dart';
 
-class EmailInputFormField extends StatelessWidget {
-  const EmailInputFormField({
+class PhoneNumberInputFormField extends StatelessWidget {
+  const PhoneNumberInputFormField({
     required this.controller,
     super.key,
   });
@@ -17,13 +17,13 @@ class EmailInputFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         /// [Text]
-        const AppText(text: 'Email'),
+        const AppText(text: 'Phone Number'),
         SizedBox(height: 8.h),
 
         /// [Form field]
         BasicFormField(
           controller: controller,
-          hintText: 'Enter email',
+          hintText: 'Enter Phone Number',
         )
       ],
     );

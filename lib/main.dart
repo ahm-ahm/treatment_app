@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             title: 'Memorilink',
             // You can use the library anywhere in the app even in theme
             theme: ThemeData(
-              primarySwatch: Colors.blue,
+              primarySwatch: Colors.pink,
               fontFamily: "Inter",
             ),
             routerDelegate: router.routerDelegate,

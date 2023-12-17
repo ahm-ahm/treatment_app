@@ -1,8 +1,8 @@
+import 'package:go_router/go_router.dart';
+import 'package:treatment_app/features/auth/presentation/views/add-family-member/view/add_family_member_view.dart';
 import 'package:treatment_app/features/auth/presentation/views/home/view/home_view.dart';
-import 'package:treatment_app/features/auth/presentation/views/login/view/login_view.dart';
 
 import 'paths.dart';
-import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
   routes: [
@@ -13,9 +13,9 @@ final router = GoRouter(
     //   },
     // ),
     GoRoute(
-      path: RoutePaths.home,
+      path: RoutePaths.addFamilyMember,
       builder: (context, state) {
-        return const HomeView();
+        return const AddFamilyMemberView();
       },
     ),
   ],

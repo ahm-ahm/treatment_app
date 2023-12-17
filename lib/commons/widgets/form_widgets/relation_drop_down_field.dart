@@ -2,14 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:treatment_app/commons/widgets/app_text.dart';
 import 'package:treatment_app/commons/widgets/basic_text_field.dart';
+import 'package:treatment_app/commons/widgets/custom_drop_down_button.dart';
 
-class EmailInputFormField extends StatelessWidget {
-  const EmailInputFormField({
-    required this.controller,
+class RelationField extends StatelessWidget {
+  final Function(String?) onValueChanged;
+  final List<String> items;
+  const RelationField({
+    required this.onValueChanged,
+    required this.items,
     super.key,
   });
-
-  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +19,15 @@ class EmailInputFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         /// [Text]
-        const AppText(text: 'Email'),
+        const AppText(text: 'Relation'),
         SizedBox(height: 8.h),
 
         /// [Form field]
-        BasicFormField(
-          controller: controller,
-          hintText: 'Enter email',
-        )
+        CustomDropDownButton(
+            padding: 0.0,
+            items: items,
+            hintText: "Select Relation",
+            onValueChanged: onValueChanged)
       ],
     );
   }
