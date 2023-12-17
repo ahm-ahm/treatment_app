@@ -54,8 +54,9 @@ class AddMemberScreen extends StatelessWidget {
             const SizedBox(height: 20.0),
             const AppText(text: 'Full Name'),
             const SizedBox(height: 10.0),
-            const CustomTextField(
+            const BasicFormField(
               hintText: 'full Name',
+              keyboardType: null,
             )
           ],
         ),

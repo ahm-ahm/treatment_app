@@ -24,14 +24,19 @@ class CustomButton extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
-        decoration: BoxDecoration(color: btnColor, border: btnBoxBorder, borderRadius: BorderRadius.circular(5)),
+        decoration: BoxDecoration(
+          color: btnColor,
+          border: btnBoxBorder,
+          borderRadius: BorderRadius.circular(5),
+        ),
         child: Center(
-            child: FittedBox(
-              child: Text(
-                btnName,
-                style: textStyle,
-              ),
-            )),
+          child: FittedBox(
+            child: Text(
+              btnName,
+              style: textStyle,
+            ),
+          ),
+        ),
       ),
     );
   }
