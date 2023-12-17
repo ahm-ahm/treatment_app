@@ -1,94 +1,120 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:treatment_app/utils/app_colors.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:treatment_app/utils/resource/app_colors.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField(
-      {Key? key,
-      this.hintText,
-      this.controller,
-      this.onTap,
-      this.obscureText = false,
-      this.enabled = true,
-      this.onChanged,
-      this.maxLines,
-      this.maxLength,
-      this.keyboardType,
-      this.suffixIcon,
-      this.validator,
-      this.prefixIcon,
-      this.textInputAction,
-      this.filled,
-      this.fillColor = Colors.white,
-      this.hintStyle,
-      this.isReadOnly,
-      this.edgeInsets})
-      : super(key: key);
+class BasicFormField extends StatelessWidget {
+  const BasicFormField({
+    super.key,
+    this.labelText,
+    this.isFormattedNumber = false,
+    this.keyboardType,
+    this.validator,
+    this.hintText,
+    this.obscureText = false,
+    this.suffixIcon,
+    this.focusNode,
+    this.onSaved,
+    this.onEditingComplete,
+    this.controller,
+    this.autofocus = false,
+    this.enabled = true,
+    this.onChanged,
+    this.prefixIcon,
+    this.onTap,
+    this.minLine = 1,
+    this.maxLines = 1,
+    this.radius = 6,
+    this.contentPadding,
+    this.inputFormatters,
+    this.fillColor = Colors.white,
+    this.textInputAction = TextInputAction.next,
+  });
 
-  final String? hintText;
-  final TextEditingController? controller;
-  final bool obscureText;
-  final bool enabled;
-  final Function(String)? onChanged;
-  final int? maxLines;
-  final int? maxLength;
-  final TextInputType? keyboardType;
   final Widget? suffixIcon;
-  final FormFieldValidator<String>? validator;
   final Widget? prefixIcon;
-  final TextInputAction? textInputAction;
-  final bool? filled;
+  final String? labelText;
+  final String? hintText;
+  final EdgeInsetsGeometry? contentPadding;
+  final bool obscureText;
+  final TextInputType? keyboardType;
+  final FocusNode? focusNode;
   final Color? fillColor;
-  final TextStyle? hintStyle;
-  final EdgeInsetsGeometry? edgeInsets;
-  final bool? isReadOnly;
+  final TextInputAction textInputAction;
+  final String? Function(String?)? validator;
+  final void Function(String?)? onSaved;
+  final List<TextInputFormatter>? inputFormatters;
+  final void Function()? onEditingComplete;
   final VoidCallback? onTap;
+  final void Function(String?)? onChanged;
+  final TextEditingController? controller;
+  final bool autofocus;
+  final bool enabled;
+  final int maxLines;
+  final bool isFormattedNumber;
+  final int minLine;
+  final double radius;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onTap: onTap,
-      validator: validator,
-      controller: controller,
-      obscureText: obscureText,
-      keyboardType: keyboardType,
-      textInputAction: textInputAction,
-      maxLines: maxLines,
-      enabled: enabled,
       onChanged: onChanged,
-      maxLength: maxLength,
-      readOnly: isReadOnly ?? false,
+      autofocus: autofocus,
+      enabled: enabled,
+      controller: controller,
+      keyboardType: keyboardType,
+      obscureText: obscureText,
+      maxLines: maxLines,
+      minLines: minLine,
+      validator: validator,
+      onSaved: onSaved,
+      onEditingComplete: onEditingComplete,
+      textInputAction: textInputAction,
+      inputFormatters: inputFormatters,
+      focusNode: focusNode,
+      style: TextStyle(
+        color: Colors.black,
+        fontSize: 16.sp,
+      ),
+      cursorColor: Colors.black,
+      cursorHeight: 20.h,
       decoration: InputDecoration(
-        alignLabelWithHint: true,
-        isDense: true,
-        counterText: '',
-        suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
-        label: Text(
-          hintText ?? '',
-          style: const TextStyle(
-            fontSize: 13.0,
-            color: AppColors.lightGrey,
-          ),
-        ),
-        border: _border,
         hintText: hintText,
-        hintStyle: hintStyle ??
-            const TextStyle(
-              fontSize: 13.0,
-              color: AppColors.lightGrey,
-            ),
-        enabledBorder: _border,
-        focusedBorder: _focusBorder,
-        filled: filled,
+        hintStyle: TextStyle(
+          color: AppColors.grey,
+          fontSize: 16.sp,
+        ),
+        errorStyle: TextStyle(
+          fontSize: 12.sp,
+        ),
+        errorMaxLines: 2,
+        labelText: labelText,
+        labelStyle: TextStyle(
+          color: Colors.black,
+          fontSize: 16.sp,
+        ),
+        filled: true,
         fillColor: fillColor,
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.black),
+          borderRadius: BorderRadius.circular(radius.r),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.black),
+          borderRadius: BorderRadius.circular(radius.r),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: AppColors.grey),
+          borderRadius: BorderRadius.circular(radius.r),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(radius.r),
+          borderSide: const BorderSide(color: AppColors.grey),
+        ),
+        suffixIcon: suffixIcon,
       ),
     );
   }
-
-  InputBorder get _focusBorder =>
-      const OutlineInputBorder(borderSide: BorderSide(color: Colors.green));
-
-  InputBorder get _border =>
-      const OutlineInputBorder(borderSide: BorderSide(color: Colors.green));
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:treatment_app/commons/widgets/app_text.dart';
+import 'package:treatment_app/utils/resource/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
@@ -8,8 +10,11 @@ class CustomButton extends StatelessWidget {
       this.width,
       this.height,
       this.btnBoxBorder,
-      this.btnColor = Colors.black,
-      this.textStyle = const TextStyle(color: Colors.white, fontSize: 17)});
+      this.btnColor,
+      this.textStyle = const TextStyle(
+        color: Colors.white,
+        fontSize: 14.0,
+      )});
   final Function() onTap;
   final String btnName;
   final double? width;
@@ -22,19 +27,17 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        alignment: Alignment.center,
         width: width,
         height: height,
         decoration: BoxDecoration(
             color: btnColor,
             border: btnBoxBorder,
             borderRadius: BorderRadius.circular(5)),
-        child: Center(
-            child: FittedBox(
-          child: Text(
-            btnName,
-            style: textStyle,
-          ),
-        )),
+        child: AppText(
+          text: btnName,
+          color: Colors.white,
+        ),
       ),
     );
   }
