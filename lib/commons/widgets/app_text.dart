@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomText extends StatelessWidget {
+class AppText extends StatelessWidget {
   final String text;
   final double? fontSize;
   final FontWeight? fontWeight;
@@ -17,7 +17,7 @@ class CustomText extends StatelessWidget {
   final Locale? locale;
   final List<Shadow>? shadows;
 
-  const CustomText({
+  const AppText({
     Key? key,
     required this.text,
     this.fontSize,
