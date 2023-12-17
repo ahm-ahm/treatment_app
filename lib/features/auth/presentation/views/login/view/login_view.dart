@@ -34,12 +34,12 @@ class _LoginViewState extends State<LoginView> {
           child: Column(
             children: [
               /// [image]
-              Image.asset(AppImages.loginTopImage),
+              Image.asset(AppImages.loginTopImagePNG),
 
               SizedBox(height: 24.h),
 
               /// [App logo]
-              Image.asset(AppImages.loginTopImage),
+              Image.asset(AppImages.loginTopImagePNG),
 
               SizedBox(height: 40.h),
 
