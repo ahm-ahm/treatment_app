@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-// All the colors that is used in app is in constant String form
 
-Color appNameColor = Colors.black;
-Color btnColors = Colors.black;
-//............................................
-
-abstract class AppColors {
+class AppColors {
+  AppColors._();
   static const blue = Color(0xff007BFF);
   static const white = Color(0xffffffff);
   static const black = Color(0xff000000);

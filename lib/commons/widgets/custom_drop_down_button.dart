@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:treatment_app/utils/app_colors.dart';
+import 'package:treatment_app/utils/resource/app_colors.dart';
 import 'app_text.dart';
 
 class CustomDropDownButton extends StatelessWidget {

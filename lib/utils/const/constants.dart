@@ -1,0 +1,3 @@
+class Const {
+  Const._();
+}
