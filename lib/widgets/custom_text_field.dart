@@ -27,7 +27,7 @@ class CustomTextField extends StatelessWidget {
       : super(key: key);
 
   final String hintText;
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final bool obscureText;
   final bool enabled;
   final Function(String)? onChanged;
