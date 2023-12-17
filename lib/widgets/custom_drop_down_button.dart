@@ -69,10 +69,13 @@ class CustomDropDownButton extends StatelessWidget {
             borderSide: BorderSide(color: AppColors.lightGrey),
           ),
           enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: AppColors.lightGrey)),
-
+            borderSide: BorderSide(color: AppColors.lightGrey),
+          ),
           focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: AppColors.lightGrey)),
+            borderSide: BorderSide(
+              color: AppColors.lightGrey,
+            ),
+          ),
           // fillColor: fillColor ?? AppColors.white,
           // filled: true,
         ),

@@ -87,9 +87,9 @@ class CustomTextField extends StatelessWidget {
     );
   }
 
-  get _focusBorder =>
+  InputBorder get _focusBorder =>
       const OutlineInputBorder(borderSide: BorderSide(color: Colors.green));
 
-  get _border =>
+  InputBorder get _border =>
       const OutlineInputBorder(borderSide: BorderSide(color: Colors.green));
 }
