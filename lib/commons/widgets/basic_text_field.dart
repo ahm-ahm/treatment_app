@@ -1,7 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
-import '../utils/app_colors.dart';
+import 'package:treatment_app/utils/app_colors.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
@@ -87,9 +86,9 @@ class CustomTextField extends StatelessWidget {
     );
   }
 
-  get _focusBorder =>
+  InputBorder get _focusBorder =>
       const OutlineInputBorder(borderSide: BorderSide(color: Colors.green));
 
-  get _border =>
+  InputBorder get _border =>
       const OutlineInputBorder(borderSide: BorderSide(color: Colors.green));
 }

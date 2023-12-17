@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../utils/app_colors.dart';
-import 'custom_text.dart';
+import 'package:treatment_app/utils/app_colors.dart';
+import 'app_text.dart';
 
 class CustomDropDownButton extends StatelessWidget {
   final String? value;
@@ -38,14 +37,14 @@ class CustomDropDownButton extends StatelessWidget {
         items: items.map((String item) {
           return DropdownMenuItem<String>(
             value: item,
-            child: CustomText(
+            child: AppText(
               text: item,
               textOverflow: TextOverflow.ellipsis,
               fontSize: 13.0,
             ),
           );
         }).toList(),
-        hint: CustomText(
+        hint: AppText(
           text: hintText,
           textOverflow: TextOverflow.ellipsis,
           fontSize: 13.0,
@@ -57,7 +56,7 @@ class CustomDropDownButton extends StatelessWidget {
             horizontal: 10.0,
             vertical: 3.0,
           ),
-          label: CustomText(
+          label: AppText(
             text: labelText ?? '',
             textOverflow: TextOverflow.ellipsis,
             fontSize: 13.0,
@@ -69,10 +68,13 @@ class CustomDropDownButton extends StatelessWidget {
             borderSide: BorderSide(color: AppColors.lightGrey),
           ),
           enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: AppColors.lightGrey)),
-
+            borderSide: BorderSide(color: AppColors.lightGrey),
+          ),
           focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: AppColors.lightGrey)),
+            borderSide: BorderSide(
+              color: AppColors.lightGrey,
+            ),
+          ),
           // fillColor: fillColor ?? AppColors.white,
           // filled: true,
         ),
